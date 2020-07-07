@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-todos',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todos.page.scss'],
 })
 export class TodosPage implements OnInit {
-
-  constructor() { }
+  todos;
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
+    this.todos = this.dataService.getTodos();
   }
-
 }
