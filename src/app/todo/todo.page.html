@@ -4,4 +4,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" *ngIf="todo$ | async as todo">
+        <ion-item>
+          <ion-label>
+            {{todo['title']}}
+            <ion-badge color="primary" *ngIf="todo['completed']"
+              >Completed</ion-badge
+            >
+            <ion-badge color="danger" *ngIf="!todo['completed']"
+              >Pending</ion-badge
+            >
+          </ion-label>
+          <!-- <ion-icon name="chevron-forward-outline" slot="end"></ion-icon> -->
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

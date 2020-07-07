@@ -10,4 +10,8 @@ export class DataService {
   getTodos() {
     return this.http.get(`https://jsonplaceholder.typicode.com/todos`);
   }
+
+  getTodo(id) {
+    return this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
 }

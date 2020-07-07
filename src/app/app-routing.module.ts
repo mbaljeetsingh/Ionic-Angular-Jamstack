@@ -18,7 +18,7 @@ const routes: Routes = [
       import('./todos/todos.module').then((m) => m.TodosPageModule),
   },
   {
-    path: 'todo',
+    path: 'todos/:id',
     loadChildren: () =>
       import('./todo/todo.module').then((m) => m.TodoPageModule),
   },
